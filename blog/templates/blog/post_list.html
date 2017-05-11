@@ -8,24 +8,22 @@
 
 	</head>
 
+	<strong>HERE IS MY POST TODAY</strong>
+
 	<body>
 	<div>
 		<h1><a href="">Django Girls Blog</a></h1>
 	</div>
 
-	<div>
-		<p>published: 9.05.2017, 14:16</p>
-		<h2><a href="">My first post</a></h2>
-		<p>Try to write something!</p>
-	</div>
+	{% for post in posts %}
+		<div>
+			<p>published: {{post.published_date}}</p>
+			<h1><a href="">{{post.title}}</a></h1>
+			<p>{{post.text|linebreaksbr}}</p>
+	{% endfor %}
 
-	<div>
-		<p>published: 1.1.2018, 14:00</p>
-		<h2><a href="">My second post</a></h2>
-		<p>I will put it here and do not talk anymore</p>
-	</div>
 		
-
 	</body>
-
+	
+			
 </html>
